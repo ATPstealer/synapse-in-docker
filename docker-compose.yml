@@ -54,5 +54,24 @@ services:
     networks:
       - synapse_network
 
+  turnserver:
+    image: instrumentisto/coturn
+    restart: unless-stopped
+    ports:
+      - "3478:3478/udp"
+      - "3478:3478/tcp"
+      - "5349:5349/tcp"
+    environment:
+      - TURNSERVER_LISTEN_PORT=3478
+      - TURNSERVER_ALT_LISTEN_PORT=5349
+      - TURNSERVER_MIN_PORT=49152
+      - TURNSERVER_MAX_PORT=65535
+      - TURNSERVER_REALM=atpmatrix.com
+      - TURNSERVER_STATIC_AUTH_SECRET=TURNSERVER_STATIC_AUTH_SECRET
+    volumes:
+      - /var/synapse/turn:/etc/coturn
+    networks:
+      - synapse_network
+
 networks:
   synapse_network:
