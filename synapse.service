@@ -1,0 +1,11 @@
+[Unit]
+Description=Matrix Synapse server
+
+[Service]
+ExecStart=docker-compose up
+WorkingDirectory=/etc/synapse
+ExecStop=docker-compose down
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
