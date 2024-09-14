@@ -73,5 +73,16 @@ services:
     networks:
       - synapse_network
 
+  mautrix-telegram:
+    container_name: mautrix-telegram
+    image: dock.mau.dev/mautrix/telegram:latest
+    restart: unless-stopped
+    volumes:
+      - /var/synapse/bridges/telegram/data:/data
+    networks:
+      - synapse_network
+    ports:
+      - "29318:29318"
+
 networks:
   synapse_network:
