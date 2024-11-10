@@ -84,5 +84,12 @@ services:
     ports:
       - "29318:29318"
 
+  element-web:
+    container_name: element-web
+    image: vectorim/element-web
+    restart: unless-stopped
+    networks:
+      - synapse_network
+
 networks:
   synapse_network:
