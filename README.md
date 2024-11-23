@@ -1,5 +1,9 @@
 ## Deploy for Ubuntu 22/24
 
+### YouTube instruction rus
+https://www.youtube.com/watch?v=tuhoUhtuwy8
+https://www.youtube.com/watch?v=o8MmU6NSq_Y
+
 ### Preparation
 * Create A and AAAA records for server domain name. I use test.aptmatrix.com
 * Install [docker](https://docs.docker.com/engine/install/ubuntu/) and [docker-compose](https://docs.docker.com/compose/install/linux/)
